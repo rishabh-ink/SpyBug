@@ -1,5 +1,5 @@
 SpyBug
-version 1.0 (beta)
+version 1.0.0
 
 SpyBug provides a simple framework for logging and debugging using the browser's native console.
 

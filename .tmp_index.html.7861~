@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="SpyBug.js"></script>
+        <title>SpyBug</title>
+    </head>
+    <body>
+        <h2>SpyBug</h2>
+		<p>This sample demonstrates the use of SpyBug.</p>
+		<p>If you are using Mozilla Firefox 3+, then open Tools >> Error Console. You can also use <a href="http://getfirebug.com">Firebug</a>.</p>
+		<p>If you are using Internet Explorer 8+, then open Tools >> Developer Tools and select Script > Console.</p>
+		
+		<p>To understand this example, view the source of this HTML file.</p>
+		<script type="text/javascript">			
+			// Create the SpyBug object. You'll be using this object to log your messages to the console.
+			// Logging is enabled by default initially.
+			var spybug = new SpyBug();
+			
+			// These lines demonstrate the various log messages available.
+			// Use the spy method to show messages on the console. 
+			spybug.spy("This is an information message.", spybug.INFO);
+			spybug.spy("This is a debug message.", spybug.LOG);
+			
+			// Note that Internet Explorer may not support the type WARN.
+			spybug.spy("This is a warning message.", spybug.WARN);
+			
+			spybug.spy("This is an error message.", spybug.ERROR);
+			spybug.spy("This is a log message.", spybug.LOG);
+			spybug.spy("This message will use the default type i.e. LOG.");
+			
+			// You can disable logging by using the setLoggingStatus method.
+			spybug.setLoggingStatus(false);
+			spybug.spy("Oops, this message will not be shown on the console because logging is disabled.", spybug.ERROR);
+			
+			// You can enable logging again by using the setLoggingStatus method. 
+			spybug.setLoggingStatus(true);
+			
+			// The getLogingStatus method tells you whether logging is enabled or disabled.
+			spybug.spy("Logging is " + (spybug.getLoggingStatus() ? "enabled" : "disabled"), spybug.INFO);
+			
+			// The toString method simply prints a short message and the current logging status.
+			spybug.spy(spybug.toString());
+		</script>
+    </body>
+</html>
